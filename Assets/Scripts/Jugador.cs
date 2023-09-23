@@ -15,8 +15,8 @@ public class Jugador : MonoBehaviour
 
     void Update()
     {
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
-        float movimientoVertical = Input.GetAxis("Vertical");
+        float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
+        float movimientoVertical = Input.GetAxisRaw("Vertical");
 
         Vector2 direccion = new Vector2(movimientoHorizontal, movimientoVertical).normalized;
         Vector2 velocidad = direccion * velocidadMovimiento;

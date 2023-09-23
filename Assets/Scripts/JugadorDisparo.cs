@@ -29,6 +29,7 @@ public class JugadorDisparo : MonoBehaviour
         GameObject nuevaBala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
         Rigidbody2D rbBala = nuevaBala.GetComponent<Rigidbody2D>();
         rbBala.velocity = direccionDisparo * velocidadBala;
+        Destroy(nuevaBala, 2.0f);
 
         // Girar la bala para que se alinee con la dirección del disparo
         float anguloDisparo = Mathf.Atan2(direccionDisparo.y, direccionDisparo.x) * Mathf.Rad2Deg;
