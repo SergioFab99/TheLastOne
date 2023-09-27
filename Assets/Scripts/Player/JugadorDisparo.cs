@@ -4,36 +4,39 @@ using UnityEngine;
 
 public class JugadorDisparo : MonoBehaviour
 {
-    public GameObject balaPrefab;
-    public Transform puntoDisparo;
-    public float velocidadBala = 15.0f;
+    public GameObject bulletPrefab;          
+    public Transform firePoint;             
+    public float bulletSpeed = 15.0f;       
+    public float cooldownTime = 0.3f;       
+
+    private float lastShotTime = 0.0f;      
 
     void Update()
     {
-        // Detectar clic del mouse (botón izquierdo)
-        if (Input.GetButtonDown("Fire1"))
+        // Detect left mouse button click and check for cooldown
+        if (Input.GetButtonDown("Fire1") && Time.time - lastShotTime >= cooldownTime)
         {
-            Disparar();
+            Shoot();
+            lastShotTime = Time.time; // Update the last shot time
         }
     }
 
-    void Disparar()
+    void Shoot()
     {
-        // Obtener la posición del mouse en el mundo
+        // Get the mouse position in the world
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Calcular la dirección hacia la que apunta el mouse desde el punto de disparo
-        Vector2 direccionDisparo = (mousePosition - (Vector2)puntoDisparo.position).normalized;
+        // Calculate the direction from the fire point to the mouse
+        Vector2 shootDirection = (mousePosition - (Vector2)firePoint.position).normalized;
 
-        // Crear una instancia de la bala y dispararla en la dirección del mouse
-        GameObject nuevaBala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
-        Rigidbody2D rbBala = nuevaBala.GetComponent<Rigidbody2D>();
-        rbBala.velocity = direccionDisparo * velocidadBala;
-        Destroy(nuevaBala, 2.0f);
+        // Create an instance of the bullet and shoot it in the mouse direction
+        GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Rigidbody2D rbBullet = newBullet.GetComponent<Rigidbody2D>();
+        rbBullet.velocity = shootDirection * bulletSpeed;
+        Destroy(newBullet, 2.0f);
 
-        // Girar la bala para que se alinee con la dirección del disparo
-        float anguloDisparo = Mathf.Atan2(direccionDisparo.y, direccionDisparo.x) * Mathf.Rad2Deg;
-        nuevaBala.transform.rotation = Quaternion.Euler(new Vector3(0, 0, anguloDisparo));
+        // Rotate the bullet to align with the shoot direction
+        float shootAngle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+        newBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, shootAngle));
     }
 }
-

@@ -610,8 +610,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 4.6983004, y: -3.6847, z: 0}
-    m_Extent: {x: 7.9916, y: 4.7481003, z: 0}
+    m_Center: {x: 4.69975, y: -3.68895, z: 0}
+    m_Extent: {x: 7.99475, y: 4.75055, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1472,9 +1472,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f44ee2d858dc944abdd32eb8116c23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balaPrefab: {fileID: 3647859578678792709, guid: 4f135e66371c96a43b89ef5fe356efe3, type: 3}
-  puntoDisparo: {fileID: 1197426439}
-  velocidadBala: 15
+  bulletPrefab: {fileID: 3647859578678792709, guid: 4f135e66371c96a43b89ef5fe356efe3, type: 3}
+  firePoint: {fileID: 1197426439}
+  bulletSpeed: 15
+  cooldownTime: 0.3
 --- !u!61 &1003774880
 BoxCollider2D:
   m_ObjectHideFlags: 0
