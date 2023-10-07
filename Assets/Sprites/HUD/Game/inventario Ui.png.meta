@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e5269a1364a9ac649985cb04798f1628
+guid: 47cd39dee740ab9439a27851ca0c8510
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6714067155154947303
-    second: pistola de prueba_0
+      213: 7497754432848229741
+    second: inventario Ui_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pistola de prueba_0
+      name: inventario Ui_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 348
-        height: 214
+        x: 3
+        y: 3
+        width: 58
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ecc02541882d2d50800000000000000
-      internalID: 6714067155154947303
+      spriteID: d65770f8eef5d0860800000000000000
+      internalID: 7497754432848229741
       vertices: []
       indices: 
       edges: []
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      pistola de prueba_0: 6714067155154947303
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

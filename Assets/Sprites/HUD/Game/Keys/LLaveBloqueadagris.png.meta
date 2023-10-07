@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e5269a1364a9ac649985cb04798f1628
+guid: 5d8c8db1d43f7d344862dfc74ad30ca4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6714067155154947303
-    second: pistola de prueba_0
+      213: -358177101774592306
+    second: LLaveBloqueadagris_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pistola de prueba_0
+      name: LLaveBloqueadagris_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 348
-        height: 214
+        x: 3
+        y: 3
+        width: 58
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ecc02541882d2d50800000000000000
-      internalID: 6714067155154947303
+      spriteID: ec6eb0ad2df770bf0800000000000000
+      internalID: -358177101774592306
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pistola de prueba_0: 6714067155154947303
+      LLaveBloqueadagris_0: -358177101774592306
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
