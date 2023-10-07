@@ -8,6 +8,10 @@ public class PlayerWeapon : MonoBehaviour
     public new Camera camera;
     public GameObject bulletPrefab;
     public Transform spawner;
+
+    public float fireCooldown = 0.9f; // Tiempo de enfriamiento entre disparos
+    private float currentCooldown = 0f; // Tiempo transcurrido desde el último disparo
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +24,14 @@ public class PlayerWeapon : MonoBehaviour
         RotateTowardsMouse();
         CheckFiring();
     }
+
     private void RotateTowardsMouse()
     {
         float angle = GetAngleTowardsMouse();
         transform.rotation = Quaternion.Euler(0, 0, angle);
         spriteRenderer.flipY = angle >= 90 && angle <= 270;
     }
+
     private float GetAngleTowardsMouse()
     {
         Vector3 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
@@ -34,14 +40,21 @@ public class PlayerWeapon : MonoBehaviour
         float angle = (Vector3.SignedAngle(Vector3.right, mouseDirection, Vector3.forward) + 360) % 360;
         return angle;
     }
+
     private void CheckFiring()
     {
-        if (Input.GetMouseButtonDown(0))
+        currentCooldown -= Time.deltaTime; // Restamos tiempo desde el último disparo
+
+        if (Input.GetMouseButtonDown(0) && currentCooldown <= 0)
         {
+            // Realizar el disparo
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.transform.position = spawner.position;
             bullet.transform.rotation = transform.rotation;
             Destroy(bullet, 2f);
+
+            // Establecer el tiempo de enfriamiento
+            currentCooldown = fireCooldown;
         }
     }
 }

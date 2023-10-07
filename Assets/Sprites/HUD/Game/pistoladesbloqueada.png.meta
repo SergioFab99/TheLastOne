@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pistoladesbloqueada_0: 6138432019936546723
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
