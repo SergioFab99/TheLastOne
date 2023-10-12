@@ -27,9 +27,15 @@ public class PlayerWeapon : MonoBehaviour
 
     private void RotateTowardsMouse()
     {
+        Vector3 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mouseDirection = mouseWorldPosition - transform.position;
+        mouseDirection.z = 0;
+        transform.right = mouseDirection;
         float angle = GetAngleTowardsMouse();
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-        spriteRenderer.flipY = angle >= 90 && angle <= 270;
+        //transform.rotation = Quaternion.Euler(0, 0, angle);
+        Vector3 scale = transform.localScale;
+        scale.y = angle >= 90 && angle <= 270? -0.2f : 0.2f;
+        transform.localScale = scale;
     }
 
     private float GetAngleTowardsMouse()
