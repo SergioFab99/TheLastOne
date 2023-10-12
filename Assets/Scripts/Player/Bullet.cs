@@ -6,17 +6,26 @@ public class Bullet : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
     public float speed = 3;
-    // Start is called before the first frame update
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        // Comprobamos si la colisión es con un objeto que tiene la etiqueta "Enemy"
+        if (collision.CompareTag("Enemy"))
+        {
+            // Destruimos la bala
+            Destroy(gameObject);
+
+            // Realiza aquí las acciones relacionadas con el daño al enemigo.
+            // Puedes acceder al componente del enemigo y reducir su vida, por ejemplo.
+            // Ejemplo: collision.GetComponent<Enemy>().RecibirDanio(10);
+        }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         rigidbody.MovePosition(transform.position + transform.right * speed * Time.fixedDeltaTime);

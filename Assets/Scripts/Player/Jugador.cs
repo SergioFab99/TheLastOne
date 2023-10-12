@@ -6,7 +6,8 @@ public class Jugador : MonoBehaviour
 {
     public float velocidadMovimiento = 5.0f;
     private SpriteRenderer spriteRenderer; 
-    private bool mirandoDerecha = false; 
+    private bool mirandoDerecha = false;
+    private int life = 1;
 
     void Start()
     {
@@ -33,6 +34,11 @@ public class Jugador : MonoBehaviour
         {
             spriteRenderer.flipX = false;
             mirandoDerecha = false;
+        }
+        //si la vida = 0 ,destruir al Jugador
+        if (life <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
