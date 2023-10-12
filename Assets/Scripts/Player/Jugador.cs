@@ -35,10 +35,5 @@ public class Jugador : MonoBehaviour
             spriteRenderer.flipX = false;
             mirandoDerecha = false;
         }
-        //si la vida = 0 ,destruir al Jugador
-        if (life <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }

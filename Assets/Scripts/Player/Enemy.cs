@@ -14,19 +14,30 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        // Calcula la dirección hacia el jugador
-        Vector3 direccion = jugador.position - transform.position;
-        direccion.Normalize();
+        // Comprobar si el jugador aún existe
+        if (jugador != null)
+        {
+            // Calcula la dirección hacia el jugador
+            Vector3 direccion = jugador.position - transform.position;
+            direccion.Normalize();
 
-        // Mueve el enemigo en la dirección del jugador
-        transform.Translate(direccion * velocidadPersecucion * Time.deltaTime);
+            // Mueve el enemigo en la dirección del jugador
+            transform.Translate(direccion * velocidadPersecucion * Time.deltaTime);
+        }
     }
-     void OnTriggerEnter2D(Collider2D collision)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bala")
         {
             //quitar 1 de vida
             Destroy(gameObject);
         }
+        else if (collision.CompareTag("Player"))
+        {
+            // Si colisiona con el jugador, destruye el jugador
+            Destroy(collision.gameObject); // Destruye al jugador
+        }
     }
 }
+
