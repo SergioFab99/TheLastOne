@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
+    //State manager
     EnemyBaseState CurrentState;
     public EnemyBaseState AggroState = new EnemyAggroState();
     public EnemyBaseState RestingState = new EnemyRestingState();
     public EnemyPathfindign PathFinder;
     SpriteRenderer SpriteRenderer;
+
 
     private void Awake()
     {
@@ -17,15 +19,8 @@ public class EnemyStateManager : MonoBehaviour
         CurrentState = AggroState;
         SwitchState(AggroState);
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        CurrentState.UpdateState(this);
         if(CurrentState == AggroState)
         {
             SpriteRenderer.color = Color.red;
@@ -43,7 +38,7 @@ public class EnemyStateManager : MonoBehaviour
             SwitchState(RestingState);
         }
     }
-    void SwitchState(EnemyBaseState NewState)
+    public void SwitchState(EnemyBaseState NewState)
     {
         CurrentState.ExitState(this);
         CurrentState= NewState;
