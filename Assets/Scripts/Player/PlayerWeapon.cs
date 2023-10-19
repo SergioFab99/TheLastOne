@@ -10,7 +10,8 @@ public class PlayerWeapon : MonoBehaviour
     public Transform spawner;
 
     public float fireCooldown = 0.9f; // Tiempo de enfriamiento entre disparos
-    private float currentCooldown = 0f; // Tiempo transcurrido desde el último disparo
+    private float currentCooldown = 0f;
+    // Tiempo transcurrido desde el último disparo
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class PlayerWeapon : MonoBehaviour
         float angle = GetAngleTowardsMouse();
         //transform.rotation = Quaternion.Euler(0, 0, angle);
         Vector3 scale = transform.localScale;
-        scale.y = angle >= 90 && angle <= 270? -0.2f : 0.2f;
+        scale.y = angle >= 90 && angle <= 270? -0.1f : 0.1f;
         transform.localScale = scale;
     }
 
