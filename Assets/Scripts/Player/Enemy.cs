@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
             Vector3 direccion = jugador.position - transform.position;
             direccion.Normalize();
 
-            // Mueve el enemigo en la dirección del jugador
+            // Mueve el enemigo en la dirección del jugador // Soy Giacomo
             transform.Translate(direccion * velocidadPersecucion * Time.deltaTime);
         }
     }
