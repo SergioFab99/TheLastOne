@@ -10,11 +10,16 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyPathfindign PathFinder;
     SpriteRenderer SpriteRenderer;
 
-    void Start()
+    private void Awake()
     {
-        CurrentState = RestingState; 
         PathFinder = GetComponent<EnemyPathfindign>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
+        CurrentState = AggroState;
+        SwitchState(AggroState);
+    }
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
