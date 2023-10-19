@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pizarra 3_0: -657710195132860324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

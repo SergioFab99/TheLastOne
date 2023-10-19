@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Casillero grande_0: 1858176702603278230
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

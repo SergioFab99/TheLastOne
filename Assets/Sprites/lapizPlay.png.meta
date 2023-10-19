@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lapizPlay_0: -3274243117665745570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

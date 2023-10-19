@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Silla frontal_0: 8025209268627240963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

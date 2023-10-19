@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Casillero peque\xF1o_0": -8278242488142995065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

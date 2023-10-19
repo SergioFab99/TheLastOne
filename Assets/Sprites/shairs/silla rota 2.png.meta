@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      silla rota 2_0: -7675735302122411745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
