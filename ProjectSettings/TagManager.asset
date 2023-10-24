@@ -8,6 +8,7 @@ TagManager:
   - ThoughtInteraction
   - Enemy
   - Bala
+  - PuntoDeCambio
   layers:
   - Default
   - TransparentFX

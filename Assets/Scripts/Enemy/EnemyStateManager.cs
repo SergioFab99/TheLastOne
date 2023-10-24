@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
+    //State manager
     EnemyBaseState CurrentState;
     public EnemyBaseState AggroState = new EnemyAggroState();
     public EnemyBaseState RestingState = new EnemyRestingState();
     public EnemyPathfindign PathFinder;
     SpriteRenderer SpriteRenderer;
 
-    void Start()
+
+    private void Awake()
     {
-        CurrentState = RestingState; 
         PathFinder = GetComponent<EnemyPathfindign>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
+        CurrentState = AggroState;
+        SwitchState(AggroState);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        CurrentState.UpdateState(this);
         if(CurrentState == AggroState)
         {
             SpriteRenderer.color = Color.red;
@@ -38,7 +38,7 @@ public class EnemyStateManager : MonoBehaviour
             SwitchState(RestingState);
         }
     }
-    void SwitchState(EnemyBaseState NewState)
+    public void SwitchState(EnemyBaseState NewState)
     {
         CurrentState.ExitState(this);
         CurrentState= NewState;
