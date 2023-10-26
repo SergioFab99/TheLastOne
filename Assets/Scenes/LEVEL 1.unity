@@ -2412,7 +2412,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4184934295759087535, guid: de5edd36d771a9c46afd34fd4a02d147, type: 3}
       propertyPath: Speed
-      value: 740
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 359915389826980868, guid: de5edd36d771a9c46afd34fd4a02d147, type: 3}
       propertyPath: m_Name
@@ -7932,7 +7932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4476916821920806708, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
       propertyPath: velocidadMovimiento
-      value: 8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4989474258575709050, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
       propertyPath: m_Constraints
