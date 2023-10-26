@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: "Assets/Scenes/Men\xFA.unity"
+    guid: 2e606a6257d55c54a8b8bc05c00e3e22
+  - enabled: 1
+    path: Assets/Scenes/LEVEL1.unity
+    guid: 5ebce40b5f948a24b94fe6392953422d
+  - enabled: 1
+    path: Assets/Scenes/Juego.unity
+    guid: 0347358b4d0783941be6206d0bade101
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -18,14 +27,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Derrota.unity
     guid: 73701bce51cd358489c316fdd39a0dfb
   - enabled: 1
-    path: "Assets/Scenes/Men\xFA.unity"
-    guid: 2e606a6257d55c54a8b8bc05c00e3e22
-  - enabled: 1
     path: Assets/Scenes/Transition.unity
     guid: a3067299ae7ee90429988872abfef92e
-  - enabled: 1
-    path: Assets/Scenes/Juego.unity
-    guid: 0347358b4d0783941be6206d0bade101
   - enabled: 1
     path: Assets/Scenes/Victoria.unity
     guid: f3e310cb6a6873b46a586ab71576ad07
