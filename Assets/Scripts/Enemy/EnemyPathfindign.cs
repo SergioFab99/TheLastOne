@@ -6,7 +6,7 @@ using Pathfinding;
 public class EnemyPathfindign : MonoBehaviour
 {
     public Transform Target;
-    public float Speed = 50f;
+    public float Speed = 2000f;
     public float NextStepDistance = 3f;
     Path path;
     int CurrentStep = 0;
