@@ -12,7 +12,7 @@ public class Jernga : Item
     }
     public override void Pickup()
     {
-        //sprite = Resources.Load<Sprite>("Assets/Sprites/Jeringa.png");
+
     }
     public override Sprite GetSprite()
     {

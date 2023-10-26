@@ -42,14 +42,17 @@ public class Inventario : MonoBehaviour
         }
     }
 
-    void Pickup(GameObject Item)
+    void Pickup()
     {
-        Item.gameObject.GetComponent<ItemManager>().OnPickup();
+
     }
 
     void UseItem(int n)
     {
         Slots[n].Use();
+        Slots[n] = null;
+        ClearSpace();
+        UpdateUI();
 
     }
     void UpdateUI()
@@ -61,8 +64,21 @@ public class Inventario : MonoBehaviour
 
     private void ClearSpace()
     {
-
+        UISlot1.GetComponent<UnityEngine.UI.Image>().sprite = null;
+        UISlot2.GetComponent<UnityEngine.UI.Image>().sprite = null;
+        UISlot3.GetComponent<UnityEngine.UI.Image>().sprite = null;
         UpdateUI();
     }
 
+    public void PickupItem(Item PickedItem)
+    {
+        for (int i = 0; i < Slots.Length; i++)
+        {
+            if (Slots[i] == null)
+            {
+                Slots[i] = PickedItem;
+                return;
+            }
+        }
+    }
 }

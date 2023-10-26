@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Bala
   - PuntoDeCambio
+  - Item
   layers:
   - Default
   - TransparentFX

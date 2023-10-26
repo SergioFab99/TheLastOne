@@ -5,7 +5,7 @@ using UnityEngine;
 public class Patrullaje : MonoBehaviour
 {
     [SerializeField] private float velocidadMov;
-    [SerializeField] public trasform[] puntosMov;
+    [SerializeField] public Transform[] puntosMov;
     [SerializeField] private float distanciaMinima;
 
     [SerializeField] private int numeroAleatorio;
@@ -14,19 +14,19 @@ public class Patrullaje : MonoBehaviour
 
     void Start()
     {
-        numeroAleatorio = Random.Range(0, puntosMov.Lenght);
-        spriteRenderer = GetComponent<spriteRenderer>();
+        numeroAleatorio = Random.Range(0, puntosMov.Length);
+        spriteRenderer = GetComponent<SpriteRenderer>();
         Girar();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transfrom.position = Vector2.MoveTowards(transform.position, puntosMov[numeroAleatorio].position, velocidadMov * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, puntosMov[numeroAleatorio].position, velocidadMov * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, puntosMov[numeroAleatorio].position) < distanciaMinima)
         {
-            numeroAleatorio = Random.Range(0, puntosMov.Lenght);
+            numeroAleatorio = Random.Range(0, puntosMov.Length);
         }
         Girar();
     }
