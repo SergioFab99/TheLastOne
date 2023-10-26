@@ -6,9 +6,9 @@ public class EnemyLife : MonoBehaviour
 {
     public int health = 100;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Bala")
+        if (other.gameObject.tag == "Bullet")
         {
             health -= 25;
 
