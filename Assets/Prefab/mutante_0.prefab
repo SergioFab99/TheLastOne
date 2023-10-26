@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Speed: 1000
+  Speed: 5000
   NextStepDistance: 3
 --- !u!114 &-2327890741332558209
 MonoBehaviour:
