@@ -19,6 +19,9 @@ public class Inventario : MonoBehaviour
     private void Awake()
     {
         Slots = new Item[3];
+        Slots[0] = null;
+        Slots[1] = null;
+        Slots[2] = null;
         Slots[0] = new Jernga();
     }
     private void Update()
@@ -57,9 +60,12 @@ public class Inventario : MonoBehaviour
     }
     void UpdateUI()
     {
-        UISlot1.GetComponent<UnityEngine.UI.Image>().sprite = Slots[0].GetSprite();
-        UISlot2.GetComponent<UnityEngine.UI.Image>().sprite = Slots[1].GetSprite();
-        UISlot3.GetComponent<UnityEngine.UI.Image>().sprite = Slots[2].GetSprite();
+        if (Slots[0] != null) {UISlot1.GetComponent<UnityEngine.UI.Image>().sprite = Slots[0].GetSprite(); }
+        if (Slots[1] != null) {UISlot2.GetComponent<UnityEngine.UI.Image>().sprite = Slots[1].GetSprite(); }
+        if (Slots[2] != null) {UISlot3.GetComponent<UnityEngine.UI.Image>().sprite = Slots[2].GetSprite(); }
+        
+        
+        
     }
 
     private void ClearSpace()
@@ -76,9 +82,12 @@ public class Inventario : MonoBehaviour
         {
             if (Slots[i] == null)
             {
+                Debug.Log("Loop" + i);
                 Slots[i] = PickedItem;
                 return;
             }
+
         }
+        UpdateUI();
     }
 }

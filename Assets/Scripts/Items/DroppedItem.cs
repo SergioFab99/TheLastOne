@@ -6,16 +6,28 @@ public class DroppedItem : MonoBehaviour
 {
     public bool ispickable;
     SpriteRenderer spriteRenderer;
+    Inventario inventario;
+    [SerializeField] Item ItemDropped;
 
     void Start()
     {
+        inventario = GameObject.Find("Player").GetComponent<Inventario>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        ItemDropped = new Jernga();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(ispickable)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Test Pickup");
+                inventario.PickupItem(new Jernga());
+                Destroy(gameObject);
+            }
+        }
     }
     public void SetPickAble()
     {
