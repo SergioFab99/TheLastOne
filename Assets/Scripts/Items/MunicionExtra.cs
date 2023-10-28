@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
-public class Jernga : Item
+public class MunicionExtra : Item
 {
-    Sprite sprite = Resources.Load<Sprite>("Jeringa");
+    Sprite sprite = Resources.Load<Sprite>("Municion");
     public override void Use()
     {
-        Debug.Log("Usaste Jeringa");
+        Debug.Log("Usaste municion");
     }
     public override void Pickup()
     {
@@ -20,6 +19,6 @@ public class Jernga : Item
     }
     public override Color GetColor()
     {
-        return Color.green;
+        return Color.gray;
     }
 }

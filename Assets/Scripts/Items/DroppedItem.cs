@@ -7,13 +7,13 @@ public class DroppedItem : MonoBehaviour
     public bool ispickable;
     SpriteRenderer spriteRenderer;
     Inventario inventario;
-    [SerializeField] Item ItemDropped;
+    Item ItemDropped;
+    [SerializeField] private bool SetDrop;
 
     void Start()
     {
         inventario = GameObject.Find("Player").GetComponent<Inventario>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        ItemDropped = new Jernga();
     }
 
     // Update is called once per frame
@@ -23,16 +23,18 @@ public class DroppedItem : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Test Pickup");
-                inventario.PickupItem(new Jernga());
-                Destroy(gameObject);
+                if(!inventario.IsInventoryFull())
+                {
+                    inventario.PickupItem(ItemDropped);
+                    Destroy(gameObject);
+                }
             }
         }
     }
     public void SetPickAble()
     {
         ispickable = true;
-        spriteRenderer.color = Color.green;
+        spriteRenderer.color = ItemDropped.GetColor();
     }
     public void SetUnpickAble()
     {
@@ -40,4 +42,20 @@ public class DroppedItem : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
     
+    private void Randomize()
+    {
+        if(!SetDrop)
+        {
+            int num = Random.Range(1, 11);
+            switch (num)
+            {
+                case int i when i > 5:
+                    ItemDropped = new Jernga();
+                    break;
+                case int i when i <= 5:
+                    ItemDropped = new MunicionExtra();
+                    break;
+            }
+        }
+    }
 }

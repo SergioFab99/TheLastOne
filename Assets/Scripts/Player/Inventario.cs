@@ -1,9 +1,9 @@
-using Microsoft.Unity.VisualStudio.Editor;
+//using Microsoft.Unity.VisualStudio.Editor;
 using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.ReorderableList;
+//using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -30,7 +30,7 @@ public class Inventario : MonoBehaviour
         {
             UpdateUI();
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             UseItem(0);
         }
@@ -52,20 +52,18 @@ public class Inventario : MonoBehaviour
 
     void UseItem(int n)
     {
+        if (Slots[n] != null)
+        {
         Slots[n].Use();
         Slots[n] = null;
         ClearSpace();
-        UpdateUI();
-
+        }    
     }
     void UpdateUI()
     {
-        if (Slots[0] != null) {UISlot1.GetComponent<UnityEngine.UI.Image>().sprite = Slots[0].GetSprite(); }
-        if (Slots[1] != null) {UISlot2.GetComponent<UnityEngine.UI.Image>().sprite = Slots[1].GetSprite(); }
-        if (Slots[2] != null) {UISlot3.GetComponent<UnityEngine.UI.Image>().sprite = Slots[2].GetSprite(); }
-        
-        
-        
+        if (Slots[0] != null) { UISlot1.GetComponent<UnityEngine.UI.Image>().sprite = Slots[0].GetSprite(); }
+        if (Slots[1] != null) { UISlot2.GetComponent<UnityEngine.UI.Image>().sprite = Slots[1].GetSprite(); }
+        if (Slots[2] != null) { UISlot3.GetComponent<UnityEngine.UI.Image>().sprite = Slots[2].GetSprite(); }
     }
 
     private void ClearSpace()
@@ -82,12 +80,21 @@ public class Inventario : MonoBehaviour
         {
             if (Slots[i] == null)
             {
-                Debug.Log("Loop" + i);
                 Slots[i] = PickedItem;
+                UpdateUI();
                 return;
             }
-
         }
-        UpdateUI();
+    }
+    public bool IsInventoryFull()
+    {
+        if (Slots[0] == null || Slots[1] == null || Slots[2] == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
