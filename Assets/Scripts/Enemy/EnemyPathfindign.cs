@@ -18,7 +18,7 @@ public class EnemyPathfindign : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
         seeker.StartPath(rb2d.position, Target.position, OnCompletePath);
-        InvokeRepeating("UpdatePath", 0f, .1f);
+        InvokeRepeating("UpdatePath", 0f, 0.05f);
     }
     private void OnCompletePath(Path _path)
     {
