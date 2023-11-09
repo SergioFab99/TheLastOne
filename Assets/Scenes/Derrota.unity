@@ -259,7 +259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289, y: -198}
+  m_AnchoredPosition: {x: -193, y: -118}
   m_SizeDelta: {x: 324.0546, y: 85.6696}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &724651511
@@ -271,10 +271,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 724651509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e753323ad47a74aa1f9c539e59fb19, type: 3}
+  m_Script: {fileID: 11500000, guid: f2adb3a5cbdd2ee4c88233066c3fe83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Juego
+  nombreDeLaEscena: Menu
+  botonAnimator: {fileID: 0}
+  otrosBotones: []
 --- !u!114 &724651512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,15 +322,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 724651511}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
+        m_TargetAssemblyTypeName: ChangeSceneMenu, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MAPEADO 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &724651513
@@ -616,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: -197}
+  m_AnchoredPosition: {x: 259, y: -115}
   m_SizeDelta: {x: 325.1297, y: 85.8079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342939624
@@ -687,7 +689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e753323ad47a74aa1f9c539e59fb19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: "Men\xFA"
 --- !u!114 &1342939626
 MonoBehaviour:
   m_ObjectHideFlags: 0
