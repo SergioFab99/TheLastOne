@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      JugarAnim2_0: 3377078397522562340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

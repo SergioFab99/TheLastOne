@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2adb3a5cbdd2ee4c88233066c3fe83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreDeLaEscena: Juego
+  nombreDeLaEscena: MAPEADO 1
   botonAnimator: {fileID: 601942599}
   otrosBotones:
   - {fileID: 601942600}
