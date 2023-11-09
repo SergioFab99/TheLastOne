@@ -35,7 +35,7 @@ public class PlayerWeapon : MonoBehaviour
         float angle = GetAngleTowardsMouse();
         //transform.rotation = Quaternion.Euler(0, 0, angle);
         Vector3 scale = transform.localScale;
-        scale.y = angle >= 90 && angle <= 270? -0.1f : 0.1f;
+        scale.y = angle >= 90 && angle <= 270? -0.04f : 0.04f;
         transform.localScale = scale;
     }
 
