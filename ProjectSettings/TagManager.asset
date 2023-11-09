@@ -11,6 +11,8 @@ TagManager:
   - PuntoDeCambio
   - Item
   - Walls
+  - EventTrigger
+  - BulletEnemy
   layers:
   - Default
   - TransparentFX

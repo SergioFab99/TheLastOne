@@ -109,6 +109,7 @@ public class Boss : MonoBehaviour
                         // Disparar una bala hacia la dirección del jugador usando la función Instantiate
                         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
                         bullet.GetComponent<Rigidbody2D>().velocity = directionToPlayer * bulletSpeed;
+                        Destroy(bullet, 2f);
 
                         // Reiniciar el contador de tiempo a cero
                         timer = 0f;

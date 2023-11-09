@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {
@@ -34,6 +35,15 @@ public class Jugador : MonoBehaviour
         {
             spriteRenderer.flipX = false;
             mirandoDerecha = false;
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("BulletEnemy"))
+        {
+            // Si colisiona con un objeto que tenga el tag "BulletEnemy", destruir el jugador
+            Destroy(gameObject);
+            SceneManager.LoadScene("Derrota");
         }
     }
 }
