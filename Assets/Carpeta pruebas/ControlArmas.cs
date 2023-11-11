@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ControlArmas : MonoBehaviour
 {
     public GameObject pistola, metralleta, bazooka;
     private int armaSeleccionada = 0;
+
+    void Start()
+    {
+        // Al inicio, activa solo la pistola
+        CambiarArma(0);
+    }
 
     void Update()
     {
@@ -26,6 +31,7 @@ public class ControlArmas : MonoBehaviour
             CambiarArma(armaSeleccionada);
         }
     }
+
     void CambiarArma(int arma)
     {
         pistola.SetActive(arma == 0);
