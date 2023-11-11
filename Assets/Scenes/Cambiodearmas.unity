@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1197687873302712758, guid: 65f2e6f669f780d4caffaf5fbf7b3f46, type: 3}
-  velocidadDisparo: 5
+  velocidadDisparo: 40
   camera: {fileID: 808232067}
   spawner: {fileID: 2061547166}
 --- !u!1 &808232065
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1197687873302712758, guid: 65f2e6f669f780d4caffaf5fbf7b3f46, type: 3}
-  velocidadDisparo: 5
+  velocidadDisparo: 20
   camera: {fileID: 808232067}
   spawner: {fileID: 2044497916}
 --- !u!1 &2003015618
