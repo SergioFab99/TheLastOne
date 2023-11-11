@@ -1,21 +1,19 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    // La velocidad de la bala
     public float speed = 30f;
 
-    // La dirección de la bala
-    public Vector3 direction;
-
-    // El método que se ejecuta cada frame
-    void Update()
+    // El método que se ejecuta cuando se dispara la bala
+    public void Disparar(Vector3 direccion)
     {
-        // Mover la bala
-        transform.position += direction * Time.deltaTime * speed;
-        //destruir despues de 2 segundos
+        // Asignar la dirección y velocidad al instanciar la bala
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = direccion.normalized * speed;
+
+        // Destruir la bala después de un tiempo para evitar acumulación
         Destroy(gameObject, 2f);
     }
 }
