@@ -6,7 +6,7 @@ public class Bazooka : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float velocidadDisparo = 10f;
-    private float cooldown = 4f;
+    private float cooldown = 3f;
     private float tiempoUltimoDisparo;
 
     void Update()
