@@ -1,12 +1,12 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Pistola : MonoBehaviour
 {
-    public GameObject balaPrefab;
-    public Transform puntoDisparo;
-    public float cooldown = 1f;
+    public GameObject bulletPrefab;
+    public float velocidadDisparo = 10f;
+    private float cooldown = 1f;
     private float tiempoUltimoDisparo;
 
     void Update()
@@ -20,7 +20,7 @@ public class Pistola : MonoBehaviour
 
     void Disparar()
     {
-        Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
-        // Aquí puedes agregar la lógica adicional del disparo de la pistola
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * velocidadDisparo;
     }
 }

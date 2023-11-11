@@ -1,37 +1,35 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Metralleta : MonoBehaviour
 {
-    public GameObject balaPrefab;
-    public Transform puntoDisparo;
-    public int balasPorRafaga = 3;
-    public float tiempoEntreBalas = 0.2f;
-    public float cooldown = 0.2f;
+    public GameObject bulletPrefab;
+    public float velocidadDisparo = 10f;
+    private float cooldown = 0.5f;
     private float tiempoUltimoDisparo;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && Time.time > tiempoUltimoDisparo + cooldown)
         {
-            StartCoroutine(DispararRafaga());
+            StartCoroutine(Rafaga());
             tiempoUltimoDisparo = Time.time;
         }
     }
 
-    IEnumerator DispararRafaga()
+    IEnumerator Rafaga()
     {
-        for (int i = 0; i < balasPorRafaga; i++)
+        for (int i = 0; i < 3; i++)
         {
             Disparar();
-            yield return new WaitForSeconds(tiempoEntreBalas);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
     void Disparar()
     {
-        Instantiate(balaPrefab, puntoDisparo.position, puntoDisparo.rotation);
-        // Aquí puedes agregar la lógica adicional del disparo de la metralleta
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * velocidadDisparo;
     }
 }
