@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -313,14 +313,23 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      perdiste sangre30_0: -7256658799522153271
+      perdiste sangre30_1: 1259604681229422905
+      perdiste sangre30_2: 2492019431280649282
+      perdiste sangre30_3: -5333012678287159148
+      perdiste sangre30_4: 4697093546868999523
+      perdiste sangre30_5: -3635815176785204315
+      perdiste sangre30_6: -6065753848566044172
+      perdiste sangre30_7: -1436997829380105660
+      perdiste sangre30_8: -3644057489648807695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
