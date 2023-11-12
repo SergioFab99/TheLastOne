@@ -12,8 +12,9 @@ public class Bala : MonoBehaviour
         // Asignar la dirección y velocidad al instanciar la bala
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = direccion.normalized * speed;
-
-        // Destruir la bala después de un tiempo para evitar acumulación
+    }
+    void update()
+    {
         Destroy(gameObject, 2f);
     }
 }
