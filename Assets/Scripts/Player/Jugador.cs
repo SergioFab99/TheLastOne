@@ -1,48 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {
     public float velocidadMovimiento = 5.0f;
-    private SpriteRenderer spriteRenderer; 
-    private bool mirandoDerecha = false;
-    private int life = 1;
+    private Rigidbody2D rb2d;
+    private bool mirandoDerecha = true;
+    private Camera cam;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
+        rb2d = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
     }
 
     void Update()
     {
+        MoverJugador();
+        RotarJugador();
+    }
+
+    void MoverJugador()
+    {
         float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
         float movimientoVertical = Input.GetAxisRaw("Vertical");
-
-        Vector2 direccion = new Vector2(movimientoHorizontal, movimientoVertical).normalized;
-        Vector2 velocidad = direccion * velocidadMovimiento;
-
-        Rigidbody2D rb2d = GetComponent<Rigidbody2D>();
+        Vector2 velocidad = new Vector2(movimientoHorizontal, movimientoVertical).normalized * velocidadMovimiento;
         rb2d.velocity = velocidad;
+    }
 
-        if (movimientoHorizontal > 0 && !mirandoDerecha)
+    void RotarJugador()
+    {
+        Vector3 mouseWorldPosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        if ((mouseWorldPosition.x > transform.position.x && !mirandoDerecha) ||
+            (mouseWorldPosition.x < transform.position.x && mirandoDerecha))
         {
-            spriteRenderer.flipX = true;
-            mirandoDerecha = true;
-        }
-        else if (movimientoHorizontal < 0 && mirandoDerecha)
-        {
-            spriteRenderer.flipX = false;
-            mirandoDerecha = false;
+            mirandoDerecha = !mirandoDerecha;
+            Vector3 escala = transform.localScale;
+            escala.x *= -1;
+            transform.localScale = escala;
         }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("BulletEnemy"))
         {
-            // Si colisiona con un objeto que tenga el tag "BulletEnemy", destruir el jugador
-            Destroy(gameObject);
             SceneManager.LoadScene("Derrota");
         }
     }

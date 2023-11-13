@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -33,9 +35,17 @@ public class PlayerWeapon : MonoBehaviour
         mouseDirection.z = 0;
         transform.right = mouseDirection;
         float angle = GetAngleTowardsMouse();
-        //transform.rotation = Quaternion.Euler(0, 0, angle);
         Vector3 scale = transform.localScale;
-        scale.y = angle >= 90 && angle <= 270? -0.04f : 0.04f;
+        if (mouseDirection.x < 0)
+        {
+            scale.y = -0.04f;
+            scale.x = -0.04f;
+        }
+        else
+        {
+            scale.x = 0.04f;
+            scale.y = 0.04f;
+        }
         transform.localScale = scale;
     }
 
