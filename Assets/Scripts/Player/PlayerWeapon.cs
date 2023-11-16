@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class PlayerWeapon : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+    private GameObject Player;
     public new Camera camera;
     public GameObject bulletPrefab;
     public Transform spawner;
@@ -19,6 +20,7 @@ public class PlayerWeapon : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class PlayerWeapon : MonoBehaviour
     private void RotateTowardsMouse()
     {
         Vector3 mouseWorldPosition = camera.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 mouseDirection = mouseWorldPosition - transform.position;
+        Vector3 mouseDirection = mouseWorldPosition - Player.transform.position;
         mouseDirection.z = 0;
         transform.right = mouseDirection;
         float angle = GetAngleTowardsMouse();
