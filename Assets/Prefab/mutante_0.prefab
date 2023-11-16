@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -2327890741332558209}
   - component: {fileID: 9177862268321508051}
   - component: {fileID: 4939682970252571771}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mutante_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  pushForce: 10
 --- !u!61 &4166190389665002160
 BoxCollider2D:
   m_ObjectHideFlags: 0
