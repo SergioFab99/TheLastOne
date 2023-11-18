@@ -257,6 +257,11 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!4 &1716333743 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6772196934132287018, guid: 1b8c5bb9ae0e1924daa5963a1cdb4f6d, type: 3}
+  m_PrefabInstance: {fileID: 4064562516052230441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4064562516052230441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -317,10 +322,18 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 808232067}
+    - target: {fileID: 6883274868341454318, guid: 1b8c5bb9ae0e1924daa5963a1cdb4f6d, type: 3}
+      propertyPath: Pistola
+      value: 
+      objectReference: {fileID: 1716333743}
     - target: {fileID: 7113212911769798401, guid: 1b8c5bb9ae0e1924daa5963a1cdb4f6d, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 808232067}
+    - target: {fileID: 7113212911769798401, guid: 1b8c5bb9ae0e1924daa5963a1cdb4f6d, type: 3}
+      propertyPath: Pistola
+      value: 
+      objectReference: {fileID: 1716333743}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

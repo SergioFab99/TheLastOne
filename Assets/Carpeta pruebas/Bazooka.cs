@@ -9,7 +9,7 @@ public class Bazooka : MonoBehaviour
     private float tiempoUltimoDisparo;
     public new Camera camera;
     public Transform spawner;
-    public Transform Pistola;
+    public Transform Pistola; // Referencia al objeto Pistola
     private GameObject Player;
 
     void Start()
@@ -61,7 +61,13 @@ public class Bazooka : MonoBehaviour
 
     void Disparar()
     {
-        GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = transform.right * velocidadDisparo;
+         // Realizar el disparo
+            GameObject bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = spawner.position;
+            bullet.transform.rotation = transform.rotation;
+            bullet.transform.localScale *= 2f;
+            Destroy(bullet, 2f);
+        //GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
+        //bullet.GetComponent<Rigidbody2D>().velocity = transform.right * velocidadDisparo;
     }
 }

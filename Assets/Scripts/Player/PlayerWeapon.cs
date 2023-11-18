@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform spawner;
 
+
     public float fireCooldown = 0.9f; // Tiempo de enfriamiento entre disparos
     private float currentCooldown = 0f;
     // Tiempo transcurrido desde el último disparo

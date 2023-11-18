@@ -75,7 +75,12 @@ public class Metralleta : MonoBehaviour
 
     void Disparar()
     {
-        GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = transform.right * velocidadDisparo;
+         // Realizar el disparo
+            GameObject bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = spawner.position;
+            bullet.transform.rotation = transform.rotation;
+            Destroy(bullet, 2f);
+        //GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
+        //bullet.GetComponent<Rigidbody2D>().velocity = transform.right * velocidadDisparo;
     }
 }
