@@ -11,9 +11,12 @@ public class Bazooka : MonoBehaviour
     public Transform spawner;
     public Transform Pistola; // Referencia al objeto Pistola
     private GameObject Player;
+    private AudioSource efectsound;
+    [SerializeField] private AudioClip audioclip;
 
     void Start()
     {
+        efectsound = GetComponent<AudioSource>();
         camera = Camera.main; // Busca la cámara principal
         Player = GameObject.Find("Player");
     }
@@ -67,6 +70,7 @@ public class Bazooka : MonoBehaviour
             bullet.transform.rotation = transform.rotation;
             bullet.transform.localScale *= 2f;
             Destroy(bullet, 2f);
+            efectsound.PlayOneShot(audioclip);
         //GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
         //bullet.GetComponent<Rigidbody2D>().velocity = transform.right * velocidadDisparo;
     }

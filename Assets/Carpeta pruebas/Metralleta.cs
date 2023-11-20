@@ -11,14 +11,16 @@ public class Metralleta : MonoBehaviour
     public Transform spawner;
     public Transform Pistola;
     private GameObject Player;
-    
+    private AudioSource efectsound;
+    [SerializeField] private AudioClip audioclip;
+
     // Escala original de la metralleta
     private Vector3 escalaOriginal;
 
     void Start()
     {
+        efectsound = GetComponent<AudioSource>();
         camera = Camera.main; // Busca la cámara principal
-                              // Guarda la escala original al inicio
         Player = GameObject.Find("Player");
         escalaOriginal = transform.localScale;
     }
@@ -79,6 +81,7 @@ public class Metralleta : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.transform.position = spawner.position;
             bullet.transform.rotation = transform.rotation;
+            efectsound.PlayOneShot(audioclip);
             Destroy(bullet, 2f);
         //GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
         //bullet.GetComponent<Rigidbody2D>().velocity = transform.right * velocidadDisparo;
