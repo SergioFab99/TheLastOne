@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 84b93f547fdf3b14d83e251499c7b417
+guid: b2c9b0cf38504e74195a13147ba79d8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8244604204129280201
-    second: inventario 3Ui_0
+      213: -8975561748000237043
+    second: botiquin4_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventario 3Ui_0
+      name: botiquin4_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 58
-        height: 58
+        x: 5
+        y: 7
+        width: 22
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c061d487d7ba6270800000000000000
-      internalID: 8244604204129280201
+      spriteID: d0a9cde0526607380800000000000000
+      internalID: -8975561748000237043
       vertices: []
       indices: 
       edges: []
@@ -121,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      inventario 3Ui_0: 8244604204129280201
+      botiquin4_0: -8975561748000237043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

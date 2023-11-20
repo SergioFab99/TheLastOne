@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 47cd39dee740ab9439a27851ca0c8510
+guid: f7ee02cd17eb5da4b8924d8f2f9a1ee5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7497754432848229741
-    second: inventario Ui_0
+      213: -3109052360223743127
+    second: BolsoVacio6_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventario Ui_0
+      name: BolsoVacio6_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 58
-        height: 58
+        x: 5
+        y: 7
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d65770f8eef5d0860800000000000000
-      internalID: 7497754432848229741
+      spriteID: 96326c0d95d6ad4d0800000000000000
+      internalID: -3109052360223743127
       vertices: []
       indices: 
       edges: []
@@ -121,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      inventario Ui_0: 7497754432848229741
+      BolsoVacio6_0: -3109052360223743127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
