@@ -11,16 +11,14 @@ public class PlayerWeapon : MonoBehaviour
     public new Camera camera;
     public GameObject bulletPrefab;
     public Transform spawner;
-    private AudioSource efectsound;
-    [SerializeField] private AudioClip audioclip;
     public float fireCooldown = 0.9f; // Tiempo de enfriamiento entre disparos
     private float currentCooldown = 0f;
+    [SerializeField] private AudioClip SonidoBala;
     // Tiempo transcurrido desde el último disparo
 
     // Start is called before the first frame update
     void Start()
     {
-        efectsound = GetComponent< AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Player = GameObject.Find("Player");
     }
@@ -70,10 +68,10 @@ public class PlayerWeapon : MonoBehaviour
         {
             // Realizar el disparo
             GameObject bullet = Instantiate(bulletPrefab);
+            bullet.GetComponent<Bullet>().ShootSound(SonidoBala);
             bullet.transform.position = spawner.position;
             bullet.transform.rotation = transform.rotation;
             Destroy(bullet, 2f);
-            efectsound.PlayOneShot(audioclip);
 
             // Establecer el tiempo de enfriamiento
             currentCooldown = fireCooldown;

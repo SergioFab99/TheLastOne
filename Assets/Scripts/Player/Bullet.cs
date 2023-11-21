@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
     public float speed = 90f;
+    private AudioClip clip;
 
     void Start()
     {
@@ -26,6 +27,12 @@ public class Bullet : MonoBehaviour
 
         }
 
+    }
+    public void ShootSound(AudioClip Sound)
+    {
+        this.clip = Sound;
+        GetComponent<AudioSource>().clip = clip;
+        GetComponent<AudioSource>().PlayOneShot(clip);
     }
 
     void FixedUpdate()

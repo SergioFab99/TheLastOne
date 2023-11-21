@@ -14,6 +14,7 @@ public class Metralleta : MonoBehaviour
     public Transform spawner;
     public Transform Pistola;
     private GameObject Player;
+    [SerializeField] private AudioClip SonidoBala;
 
     // Escala original de la metralleta
     private Vector3 escalaOriginal;
@@ -79,6 +80,7 @@ public class Metralleta : MonoBehaviour
     {
          // Realizar el disparo
             GameObject bullet = Instantiate(bulletPrefab);
+            bullet.GetComponent<Bullet>().ShootSound(SonidoBala);
             bullet.transform.position = spawner.position;
             bullet.transform.rotation = transform.rotation;
             Destroy(bullet, 2f);

@@ -14,6 +14,7 @@ public class Bazooka : MonoBehaviour
     public Transform spawner;
     public Transform Pistola; // Referencia al objeto Pistola
     private GameObject Player;
+    [SerializeField] private AudioClip SonidoBala;
 
     void Start()
     {
@@ -66,6 +67,7 @@ public class Bazooka : MonoBehaviour
     {
          // Realizar el disparo
             GameObject bullet = Instantiate(bulletPrefab);
+            bullet.GetComponent<Bullet>().ShootSound(SonidoBala);
             bullet.transform.position = spawner.position;
             bullet.transform.rotation = transform.rotation;
             bullet.transform.localScale *= 2f;
