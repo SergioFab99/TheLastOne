@@ -254,7 +254,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   spawner: {fileID: 3636088765954647741}
   Pistola: {fileID: 2015369309622893155}
-  audioclip: {fileID: 8300000, guid: ed5300e24480cd646b26ecbc0bcdf053, type: 3}
+  bazookaClip: {fileID: 8300000, guid: ed5300e24480cd646b26ecbc0bcdf053, type: 3}
 --- !u!1 &1991700673209842118
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   spawner: {fileID: 2668552583215711986}
   Pistola: {fileID: 2015369309622893155}
-  audioclip: {fileID: 8300000, guid: 17ef1be8000a6d74292a37b285a28a59, type: 3}
+  metralletaClip: {fileID: 8300000, guid: 17ef1be8000a6d74292a37b285a28a59, type: 3}
 --- !u!1 &2990965005770252349
 GameObject:
   m_ObjectHideFlags: 0

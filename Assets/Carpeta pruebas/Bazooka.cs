@@ -1,5 +1,8 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class Bazooka : MonoBehaviour
 {
@@ -11,8 +14,6 @@ public class Bazooka : MonoBehaviour
     public Transform spawner;
     public Transform Pistola; // Referencia al objeto Pistola
     private GameObject Player;
-    private AudioSource efectsound;
-    [SerializeField] private AudioClip audioclip;
 
     void Start()
     {

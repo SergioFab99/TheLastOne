@@ -1,5 +1,8 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class Metralleta : MonoBehaviour
 {
@@ -11,7 +14,6 @@ public class Metralleta : MonoBehaviour
     public Transform spawner;
     public Transform Pistola;
     private GameObject Player;
-    [SerializeField] private AudioClip audioclip;
 
     // Escala original de la metralleta
     private Vector3 escalaOriginal;
