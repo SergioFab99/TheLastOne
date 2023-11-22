@@ -828,22 +828,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2015369309622893155, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.129
-      objectReference: {fileID: 0}
-    - target: {fileID: 2015369309622893155, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.061
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623773534560768140, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
-      propertyPath: SonidoBala
-      value: 
-      objectReference: {fileID: 8300000, guid: 17ef1be8000a6d74292a37b285a28a59, type: 3}
-    - target: {fileID: 5751335429956617481, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
-      propertyPath: SonidoBala
-      value: 
-      objectReference: {fileID: 8300000, guid: ed5300e24480cd646b26ecbc0bcdf053, type: 3}
     - target: {fileID: 7236953090733510574, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.05
@@ -888,10 +872,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 78864952}
-    - target: {fileID: 7367255760641046098, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
-      propertyPath: SonidoBala
-      value: 
-      objectReference: {fileID: 8300000, guid: 975e16687ed33ba46bee3af8be1f6453, type: 3}
     - target: {fileID: 7635375123539295985, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
       propertyPath: m_Name
       value: Player

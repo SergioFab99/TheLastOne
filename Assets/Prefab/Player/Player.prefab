@@ -254,7 +254,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   spawner: {fileID: 3636088765954647741}
   Pistola: {fileID: 2015369309622893155}
-  bazookaClip: {fileID: 8300000, guid: ed5300e24480cd646b26ecbc0bcdf053, type: 3}
+  SonidoBala: {fileID: 8300000, guid: ed5300e24480cd646b26ecbc0bcdf053, type: 3}
 --- !u!1 &1991700673209842118
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   spawner: {fileID: 2668552583215711986}
   Pistola: {fileID: 2015369309622893155}
-  metralletaClip: {fileID: 8300000, guid: 17ef1be8000a6d74292a37b285a28a59, type: 3}
+  SonidoBala: {fileID: 8300000, guid: 17ef1be8000a6d74292a37b285a28a59, type: 3}
 --- !u!1 &2990965005770252349
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 2990965005770252349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.186, y: -0.039, z: 0}
+  m_LocalPosition: {x: 0.129, y: -0.061, z: 0}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -461,8 +461,8 @@ MonoBehaviour:
   camera: {fileID: 0}
   bulletPrefab: {fileID: 3647859578678792709, guid: 4f135e66371c96a43b89ef5fe356efe3, type: 3}
   spawner: {fileID: 2118370830772147668}
-  audioclip: {fileID: 8300000, guid: 975e16687ed33ba46bee3af8be1f6453, type: 3}
   fireCooldown: 0.9
+  SonidoBala: {fileID: 8300000, guid: 975e16687ed33ba46bee3af8be1f6453, type: 3}
 --- !u!82 &7946093669423257218
 AudioSource:
   m_ObjectHideFlags: 0
