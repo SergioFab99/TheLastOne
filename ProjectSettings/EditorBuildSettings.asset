@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Package/Scenes/Menu2.unity
     guid: 2b4aa2cebaa68e84fa729d725ab5a3b2
   - enabled: 1
-    path: "Assets/Scenes/Men\xFA.unity"
-    guid: 2e606a6257d55c54a8b8bc05c00e3e22
-  - enabled: 1
     path: Assets/Scenes/MAPEADO 1 1.unity
     guid: 6b2a39bb97e7fd849ae5d891934b690e
+  - enabled: 1
+    path: "Assets/Scenes/Men\xFA.unity"
+    guid: 2e606a6257d55c54a8b8bc05c00e3e22
   - enabled: 1
     path: Assets/Scenes/MAPEADO.unity
     guid: 23c78728d7425d2428d5ba4324a87b5b
