@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,15 +7,18 @@ public class Jugador : MonoBehaviour
     public float velocidadMovimiento = 5.0f;
     public float rangoAtaque = 2f; // Alcance del ataque cuerpo a cuerpo
     public LayerMask capaEnemigos; // Capa para identificar enemigos
+    
+    Animator animacion;
 
     private Rigidbody2D rb2d;
     private bool mirandoDerecha = true;
     private Camera cam;
 
     void Start()
-    {
+    {  
         rb2d = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+        animacion = GetComponent<Animator>();
     }
 
     void Update()
@@ -35,19 +39,31 @@ public class Jugador : MonoBehaviour
         float movimientoVertical = Input.GetAxisRaw("Vertical");
         Vector2 velocidad = new Vector2(movimientoHorizontal, movimientoVertical).normalized * velocidadMovimiento;
         rb2d.velocity = velocidad;
+        animacion.SetFloat("horizontal", Mathf.Abs(rb2d.velocity.x));
+        animacion.SetFloat("vertical", Mathf.Abs(rb2d.velocity.y));
+        if (rb2d.velocity.x > 0)
+        {
+         animacion.SetBool("izquierda", false);
+        }
+        else 
+        {
+         animacion.SetBool("izquierda", true);
+        }
+        if (rb2d.velocity.y > 0) 
+        {
+         animacion.SetBool("arriba", true);        
+        }
+        else
+        {
+         animacion.SetBool("arriba", false);
+        }
     }
+
 
     void RotarJugador()
     {
-        Vector3 mouseWorldPosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        if ((mouseWorldPosition.x > transform.position.x && !mirandoDerecha) ||
-            (mouseWorldPosition.x < transform.position.x && mirandoDerecha))
-        {
-            mirandoDerecha = !mirandoDerecha;
-            Vector3 escala = transform.localScale;
-            escala.x *= -1;
-            transform.localScale = escala;
-        }
+        
+       
     }
 
     void AtaqueCuerpoACuerpo()
