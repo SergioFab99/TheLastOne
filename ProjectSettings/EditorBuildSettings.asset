@@ -12,14 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MAPEADO 1.unity
     guid: 6b2a39bb97e7fd849ae5d891934b690e
   - enabled: 1
+    path: Assets/Package/Scenes/Menu2.unity
+    guid: 2b4aa2cebaa68e84fa729d725ab5a3b2
+  - enabled: 1
     path: Assets/Scenes/MAPEADO.unity
     guid: 23c78728d7425d2428d5ba4324a87b5b
-  - enabled: 1
-    path: Assets/Scenes/LEVEL1.unity
-    guid: 5ebce40b5f948a24b94fe6392953422d
-  - enabled: 1
-    path: Assets/Scenes/Juego.unity
-    guid: 0347358b4d0783941be6206d0bade101
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
