@@ -15,11 +15,15 @@ public class Bazooka : MonoBehaviour
     public Transform Pistola; // Referencia al objeto Pistola
     private GameObject Player;
     [SerializeField] private AudioClip SonidoBala;
+    Transform ShootingRight;
+    Transform ShootingLeft;
 
     void Start()
     {
         camera = Camera.main; // Busca la cámara principal
         Player = GameObject.Find("Player");
+        ShootingLeft = GameObject.Find("ShootingLeft").GetComponent<Transform>();
+        ShootingRight = GameObject.Find("ShootingRight").GetComponent<Transform>();
     }
 
     void Update()
@@ -43,15 +47,20 @@ public class Bazooka : MonoBehaviour
         Vector3 scale = transform.localScale;
         if (mouseDirection.x < 0)
         {
+            transform.position = ShootingLeft.transform.position;
             scale.y = -0.04f;
-            scale.x = -0.04f;
+            //scale.x = -0.04f;
+            transform.localScale = scale;
+
         }
         else
         {
-            scale.x = 0.04f;
+
+            transform.position = ShootingRight.transform.position;
+            //scale.x = 0.04f;
             scale.y = 0.04f;
+            transform.localScale = scale;
         }
-        transform.localScale = scale;
     }
 
     private float GetAngleTowardsMouse()

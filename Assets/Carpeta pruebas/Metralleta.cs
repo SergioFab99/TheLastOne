@@ -15,6 +15,8 @@ public class Metralleta : MonoBehaviour
     public Transform Pistola;
     private GameObject Player;
     [SerializeField] private AudioClip SonidoBala;
+    Transform ShootingRight;
+    Transform ShootingLeft;
 
     // Escala original de la metralleta
     private Vector3 escalaOriginal;
@@ -24,6 +26,8 @@ public class Metralleta : MonoBehaviour
         camera = Camera.main; // Busca la cámara principal
         Player = GameObject.Find("Player");
         escalaOriginal = transform.localScale;
+        ShootingLeft = GameObject.Find("ShootingLeft").GetComponent<Transform>();
+        ShootingRight = GameObject.Find("ShootingRight").GetComponent<Transform>();
     }
     
     void Update()
@@ -47,15 +51,20 @@ public class Metralleta : MonoBehaviour
         Vector3 scale = transform.localScale;
         if (mouseDirection.x < 0)
         {
+            transform.position = ShootingLeft.transform.position;
             scale.y = -0.04f;
-            scale.x = -0.04f;
+            //scale.x = -0.04f;
+            transform.localScale = scale;
+
         }
         else
         {
-            scale.x = 0.04f;
+
+            transform.position = ShootingRight.transform.position;
+            //scale.x = 0.04f;
             scale.y = 0.04f;
+            transform.localScale = scale;
         }
-        transform.localScale = scale;
     }
 
     private float GetAngleTowardsMouse()
