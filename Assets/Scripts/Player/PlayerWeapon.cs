@@ -14,13 +14,19 @@ public class PlayerWeapon : MonoBehaviour
     public float fireCooldown = 0.9f; // Tiempo de enfriamiento entre disparos
     private float currentCooldown = 0f;
     [SerializeField] private AudioClip SonidoBala;
+    Jugador Jugador;
+    Transform ShootingRight;
+    Transform ShootingLeft;
     // Tiempo transcurrido desde el último disparo
 
     // Start is called before the first frame update
     void Start()
     {
+        Jugador = GameObject.Find("Player").GetComponent<Jugador>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Player = GameObject.Find("Player");
+        ShootingLeft = GameObject.Find("ShootingLeft").GetComponent<Transform>();
+        ShootingRight = GameObject.Find("ShootingRight").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -38,17 +44,23 @@ public class PlayerWeapon : MonoBehaviour
         transform.right = mouseDirection;
         float angle = GetAngleTowardsMouse();
         Vector3 scale = transform.localScale;
+        Debug.Log(mouseDirection);
         if (mouseDirection.x < 0)
         {
+            transform.position = ShootingLeft.transform.position;
             scale.y = -0.04f;
-            scale.x = -0.04f;
+            //scale.x = -0.04f;
+            transform.localScale = scale;
+            
         }
         else
         {
-            scale.x = 0.04f;
+           
+            transform.position = ShootingRight.transform.position;
+            //scale.x = 0.04f;
             scale.y = 0.04f;
+            transform.localScale = scale;
         }
-        transform.localScale = scale;
     }
 
     private float GetAngleTowardsMouse()
