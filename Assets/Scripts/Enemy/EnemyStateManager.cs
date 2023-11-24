@@ -10,14 +10,16 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyBaseState RestingState = new EnemyRestingState();
     public EnemyPathfindign PathFinder;
     SpriteRenderer SpriteRenderer;
+    AudioSource audioSource;
 
 
     private void Awake()
     {
         PathFinder = GetComponent<EnemyPathfindign>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
-        CurrentState = AggroState;
-        SwitchState(AggroState);
+        audioSource = GetComponent<AudioSource>();
+        CurrentState = RestingState;
+        SwitchState(CurrentState);
     }
     void Update()
     {
@@ -44,4 +46,6 @@ public class EnemyStateManager : MonoBehaviour
         CurrentState= NewState;
         CurrentState.EnterState(this);
     }
+    public AudioSource Audiosource()
+    { return audioSource; }
 }

@@ -44,7 +44,6 @@ public class PlayerWeapon : MonoBehaviour
         transform.right = mouseDirection;
         float angle = GetAngleTowardsMouse();
         Vector3 scale = transform.localScale;
-        Debug.Log(mouseDirection);
         if (mouseDirection.x < 0)
         {
             transform.position = ShootingLeft.transform.position;
