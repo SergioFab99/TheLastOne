@@ -365,7 +365,7 @@ MonoBehaviour:
   hurtValue: 50
   bulletPrefab: {fileID: 7126759716279487492, guid: 779090d1ee6f58a4a85892684e771aea, type: 3}
   bulletSpawn: {fileID: 1434300762}
-  bulletSpeed: 10
+  bulletSpeed: 20
   shootInterval: 1
 --- !u!60 &1052788014
 PolygonCollider2D:
@@ -486,6 +486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2984739405452613730, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 2069145481}
     - target: {fileID: 7236953090733510574, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.25
@@ -550,6 +554,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b07448018149ee479c5d11c3e7e407a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2069145481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7380375834171649895, guid: 1269f44d51a2bc045ab4a9d125bd4b5c, type: 3}
+  m_PrefabInstance: {fileID: 1640177854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
