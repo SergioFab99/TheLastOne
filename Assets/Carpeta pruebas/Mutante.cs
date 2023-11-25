@@ -9,13 +9,16 @@ public class Mutante : MonoBehaviour
     private GameObject player;
     private bool isPlayerInRange = false;
 
+    [SerializeField] private AudioClip alertClip; // Clip de sonido de alerta
+    private AudioSource alertSound;
+
     void Start()
     {
-        // Intenta encontrar al jugador en la escena
+        // Encuentra y asigna el jugador
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
-            Debug.LogError("No se encontró un GameObject con la etiqueta 'Player'. Asegúrate de que el jugador esté etiquetado correctamente.");
+            Debug.LogError("No se encontró un GameObject con la etiqueta 'Player'.");
             return;
         }
 
@@ -27,28 +30,40 @@ public class Mutante : MonoBehaviour
         }
         collider.isTrigger = true;
         collider.radius = detectionRadius;
+
+        // Configura el AudioSource
+        alertSound = gameObject.AddComponent<AudioSource>();
+        alertSound.clip = alertClip;
+        alertSound.playOnAwake = false;
     }
 
     void Update()
     {
+        // Persecución del jugador
         if (isPlayerInRange && player != null)
         {
             Vector3 directionToPlayer = (player.transform.position - transform.position);
-            directionToPlayer.z = 0; // Asegura que no haya movimiento en el eje Z
+            directionToPlayer.z = 0; // Elimina el movimiento en el eje Z para juegos 2D
             transform.position += directionToPlayer.normalized * chaseSpeed * Time.deltaTime;
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Detecta la entrada del jugador y reproduce el sonido de alerta
         if (other.gameObject == player)
         {
             isPlayerInRange = true;
+            if (alertSound != null && !alertSound.isPlaying)
+            {
+                alertSound.Play();
+            }
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
+        // Detecta la salida del jugador
         if (other.gameObject == player)
         {
             isPlayerInRange = false;
@@ -57,6 +72,7 @@ public class Mutante : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        // Dibuja el radio de detección en el editor
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
