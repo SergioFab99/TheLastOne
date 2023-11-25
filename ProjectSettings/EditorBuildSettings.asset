@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PathfindingTest.unity
     guid: 0257623d24c438c44ab7355cf5527a0f
   - enabled: 1
-    path: Assets/Scenes/testch.unity
+    path: Assets/Scenes/TestChristian.unity
     guid: cf936fb419b5a9648992d3fc99d41945
   - enabled: 1
     path: Assets/Scenes/TestsMateo.unity
