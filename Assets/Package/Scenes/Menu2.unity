@@ -230,8 +230,8 @@ GameObject:
   - component: {fileID: 399415070}
   - component: {fileID: 399415069}
   - component: {fileID: 399415068}
-  - component: {fileID: 399415067}
   - component: {fileID: 399415066}
+  - component: {fileID: 399415071}
   m_Layer: 5
   m_Name: CreditosButton
   m_TagString: Untagged
@@ -280,18 +280,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &399415067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399415064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36fa0cc125e40834baa9989c0e8f42d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &399415068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,18 +324,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 399415067}
-        m_TargetAssemblyTypeName: ChangeSceneMenu, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 399415071}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: "Cr\xE9ditos"
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &399415069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +374,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399415064}
   m_CullTransparentMesh: 1
+--- !u!114 &399415071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399415064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf6cbd0d6c2f3046ac4922867d8329d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &553399893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1124,6 @@ GameObject:
   - component: {fileID: 1800587227}
   - component: {fileID: 1800587224}
   - component: {fileID: 1800587226}
-  - component: {fileID: 1800587225}
   - component: {fileID: 1800587230}
   m_Layer: 5
   m_Name: JugarButton
@@ -1189,18 +1188,6 @@ MonoBehaviour:
           m_StringArgument: MAPEADO_1
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1800587225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800587223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36fa0cc125e40834baa9989c0e8f42d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1800587226
 Animator:
   serializedVersion: 7
