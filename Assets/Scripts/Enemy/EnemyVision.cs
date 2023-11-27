@@ -20,15 +20,15 @@ public class EnemyVision : MonoBehaviour
         Vector2 Direction = new Vector2(Player.transform.position.x - transform.position.y, Player.transform.position.y - transform.position.y);
         Hit = Physics2D.Raycast(transform.position, Direction);
         Debug.DrawRay(transform.position, Direction);
-        Debug.Log(Hit.collider.name);
+       // Debug.Log(Hit.collider.name);
         if (Hit.collider.gameObject.tag == "Player" && Hit.distance < AggroDistance)
         {
-            Debug.Log("Player detected");
+            //Debug.Log("Player detected");
             Manager.SwitchState(Manager.AggroState);
         }
         else
         {
-            Debug.Log("Player not detected");
+            //Debug.Log("Player not detected");
             return;
         }
     }

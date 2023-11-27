@@ -11,6 +11,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyPathfindign PathFinder;
     SpriteRenderer SpriteRenderer;
     AudioSource audioSource;
+    public GameObject Player;
 
 
     private void Awake()
@@ -20,9 +21,11 @@ public class EnemyStateManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         CurrentState = RestingState;
         SwitchState(CurrentState);
+        Player = GameObject.Find("Player");
     }
     void Update()
     {
+        CurrentState.UpdateState(this);
         if(CurrentState == AggroState)
         {
             SpriteRenderer.color = Color.red;

@@ -32,12 +32,11 @@ public class EnemyPathfindign : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(rb2d.position, Target.position) >= 10)
+        /*if(Vector2.Distance(rb2d.position, Target.position) >= 10)
         {
             Speed = 0;
             return;
-        }
-        Speed = 3000;
+        }*/
         if (path == null)
         {
             return;
@@ -59,6 +58,7 @@ public class EnemyPathfindign : MonoBehaviour
         {
             CurrentStep++;
         }
+        
     }
     private void UpdatePath()
     {
