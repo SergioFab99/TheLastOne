@@ -6,7 +6,7 @@ using Pathfinding;
 public class EnemyPathfindign : MonoBehaviour
 {
     public Transform Target;
-    public float Speed = 2000f;
+    public float Speed = 0;
     public float NextStepDistance = 3f;
     Path path;
     int CurrentStep = 0;
@@ -32,7 +32,12 @@ public class EnemyPathfindign : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Vector2.Distance(rb2d.position, Target.position) >= 10)
+        {
+            Speed = 0;
+            return;
+        }
+        Speed = 3000;
         if (path == null)
         {
             return;
