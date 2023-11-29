@@ -23,6 +23,7 @@ public class EnemyRestingState : EnemyBaseState
     public override void ExitState(EnemyStateManager manager)
     {
         manager.Audiosource().PlayOneShot(PlayerDetected);
+        Debug.Log("Should've played the audio");
     }
     public override void UpdateState(EnemyStateManager manager)
     {

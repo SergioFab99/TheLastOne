@@ -8,6 +8,7 @@ public class EnemyVision : MonoBehaviour
     RaycastHit2D Hit;
     [SerializeField] private float AggroDistance;
     [SerializeField] private float AggroTime;
+    [SerializeField] LayerMask LayersHit;
     EnemyStateManager Manager;
     private void Awake()
     {
@@ -17,18 +18,19 @@ public class EnemyVision : MonoBehaviour
     }
     private void Update()
     {
-        Vector2 Direction = new Vector2(Player.transform.position.x - transform.position.y, Player.transform.position.y - transform.position.y);
-        Hit = Physics2D.Raycast(transform.position, Direction);
+        //Vector2 Direction = new Vector2(Player.transform.position.x - transform.position.y, Player.transform.position.y - transform.position.y);
+        Vector2 Direction = Player.transform.position - transform.position;
+        Hit = Physics2D.Raycast(transform.position, Direction.normalized, AggroDistance, LayersHit);
         Debug.DrawRay(transform.position, Direction);
-       // Debug.Log(Hit.collider.name);
-        if (Hit.collider.gameObject.tag == "Player" && Hit.distance < AggroDistance)
+        Debug.Log(Hit.collider.name);
+        if (Hit.collider.gameObject.tag == "Player")
         {
-            //Debug.Log("Player detected");
+            Debug.Log("Player detected");
             Manager.SwitchState(Manager.AggroState);
         }
         else
         {
-            //Debug.Log("Player not detected");
+            Debug.Log("Player not detected");
             return;
         }
     }
