@@ -116,12 +116,12 @@ TextureImporter:
       name: Enemigo_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 0
-        width: 30
-        height: 31
+        width: 28
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: Enemigo_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 0
-        width: 28
-        height: 31
+        width: 26
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,12 +158,12 @@ TextureImporter:
       name: Enemigo_2
       rect:
         serializedVersion: 2
-        x: 65
-        y: 1
-        width: 27
-        height: 31
+        x: 66
+        y: 2
+        width: 25
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,12 +179,12 @@ TextureImporter:
       name: Enemigo_3
       rect:
         serializedVersion: 2
-        x: 97
+        x: 98
         y: 0
-        width: 30
-        height: 31
+        width: 28
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,12 +200,12 @@ TextureImporter:
       name: Enemigo_4
       rect:
         serializedVersion: 2
-        x: 132
+        x: 133
         y: 0
-        width: 28
-        height: 31
+        width: 26
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -221,12 +221,12 @@ TextureImporter:
       name: Enemigo_5
       rect:
         serializedVersion: 2
-        x: 164
-        y: 1
-        width: 27
-        height: 31
+        x: 165
+        y: 2
+        width: 25
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,14 +241,20 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c6b056361c014d14187657366879d549
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Enemigo_0: -3935032340282478731
+      Enemigo_1: 5640606235071657281
+      Enemigo_2: 522171849847597119
+      Enemigo_3: -3768304701640517837
+      Enemigo_4: -7023616270577627430
+      Enemigo_5: 3348290349081841948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
