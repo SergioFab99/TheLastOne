@@ -13,11 +13,13 @@ public class EnemyPathfindign : MonoBehaviour
     bool PathEnded = false;
     Seeker seeker;
     Rigidbody2D rb2d;
+    Animator animator;
     void Start()
     {
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
         seeker.StartPath(rb2d.position, Target.position, OnCompletePath);
+        animator = GetComponent<Animator>();
         InvokeRepeating("UpdatePath", 0f, 0.05f);
     }
     private void OnCompletePath(Path _path)
@@ -52,6 +54,7 @@ public class EnemyPathfindign : MonoBehaviour
         }
         Vector2 Angle = ((Vector2)path.vectorPath[CurrentStep] - rb2d.position).normalized;
         Vector2 MoveForce = Angle * Speed * Time.deltaTime;
+        Debug.Log(MoveForce);
         float distance = Vector2.Distance(rb2d.position, path.vectorPath[CurrentStep]);
         rb2d.AddForce(MoveForce);
         if (distance < NextStepDistance)
