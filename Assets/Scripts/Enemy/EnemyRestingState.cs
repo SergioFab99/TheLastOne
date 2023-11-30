@@ -9,12 +9,11 @@ public class EnemyRestingState : EnemyBaseState
     [SerializeField] private float velocidadMov;
     [SerializeField] public UnityEngine.GameObject[] puntosMov;
     [SerializeField] private float distanciaMinima;
-
     [SerializeField] private int numeroAleatorio;
 
     public override void EnterState(EnemyStateManager manager)
     {
-        PlayerDetected = Resources.Load<AudioClip>("Efecto_de_sonido_Sorpresa_320_kbps.mp3");
+        PlayerDetected = Resources.Load<AudioClip>("Efecto_de_sonido_Sorpresa_320_kbps");
         puntosMov = GameObject.FindGameObjectsWithTag("Patrullaje");
         numeroAleatorio = Random.Range(0, puntosMov.Length);
         
@@ -22,8 +21,7 @@ public class EnemyRestingState : EnemyBaseState
     }
     public override void ExitState(EnemyStateManager manager)
     {
-        manager.Audiosource().PlayOneShot(PlayerDetected);
-        Debug.Log("Should've played the audio");
+        manager.Audiosource().PlayOneShot(PlayerDetected, 0.5f);
     }
     public override void UpdateState(EnemyStateManager manager)
     {

@@ -26,22 +26,6 @@ public class EnemyStateManager : MonoBehaviour
     void Update()
     {
         CurrentState.UpdateState(this);
-        if(CurrentState == AggroState)
-        {
-            SpriteRenderer.color = Color.red;
-        }
-        if(CurrentState == RestingState)
-        {
-            SpriteRenderer.color = Color.blue;
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SwitchState(AggroState);
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SwitchState(RestingState);
-        }
     }
     public void SwitchState(EnemyBaseState NewState)
     {
