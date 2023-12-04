@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemyPathfindign : MonoBehaviour
 {
+    [SerializeField] float resetDistance; 
     public Transform Target;
     public float Speed = 0;
     public float NextStepDistance = 3f;
@@ -20,7 +21,7 @@ public class EnemyPathfindign : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         seeker.StartPath(rb2d.position, Target.position, OnCompletePath);
         animator = GetComponent<Animator>();
-        InvokeRepeating("UpdatePath", 0f, 0.05f);
+        InvokeRepeating("UpdatePath", 0f, 0.1f);
     }
     private void OnCompletePath(Path _path)
     {
@@ -38,7 +39,7 @@ public class EnemyPathfindign : MonoBehaviour
         {
             Speed = 0;
             return;
-        }*/
+        }
         if (path == null)
         {
             return;
@@ -52,15 +53,21 @@ public class EnemyPathfindign : MonoBehaviour
         {
             PathEnded = false;
         }
+        if(Vector2.Distance(transform.position, Target.transform.position) < resetDistance)
+        {
+            PathEnded = true;
+        }
         Vector2 Angle = ((Vector2)path.vectorPath[CurrentStep] - rb2d.position).normalized;
         Vector2 MoveForce = Angle * Speed * Time.deltaTime;
         Debug.Log(MoveForce);
         float distance = Vector2.Distance(rb2d.position, path.vectorPath[CurrentStep]);
         rb2d.AddForce(MoveForce);
+        updateAnim(MoveForce);
         if (distance < NextStepDistance)
         {
             CurrentStep++;
         }
+        */
         
     }
     private void UpdatePath()
@@ -69,5 +76,10 @@ public class EnemyPathfindign : MonoBehaviour
         {
             seeker.StartPath(rb2d.position, Target.position, OnCompletePath);
         }
+    }
+    void updateAnim(Vector2 MoveForce)
+    {
+        animator.SetFloat("Velocidad_x", MoveForce.x);
+        animator.SetFloat("Velocidad_y", MoveForce.y);
     }
 }
