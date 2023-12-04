@@ -21,7 +21,7 @@ public class EnemyPathfindign : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         seeker.StartPath(rb2d.position, Target.position, OnCompletePath);
         animator = GetComponent<Animator>();
-        InvokeRepeating("UpdatePath", 0f, 0.1f);
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
     private void OnCompletePath(Path _path)
     {
@@ -39,7 +39,7 @@ public class EnemyPathfindign : MonoBehaviour
         {
             Speed = 0;
             return;
-        }
+        }*/
         if (path == null)
         {
             return;
@@ -67,7 +67,7 @@ public class EnemyPathfindign : MonoBehaviour
         {
             CurrentStep++;
         }
-        */
+        
         
     }
     private void UpdatePath()
